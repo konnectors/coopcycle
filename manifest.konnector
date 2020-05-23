@@ -21,44 +21,44 @@
       "label": "providerName",
       "options": [
         {
-          "name":"Nantes (Les Coursiers Nantais)",
-          "value":"1"
+          "name": "Berlin (Kolyma2)",
+          "value": "1"
         },
         {
-          "name":"Poitiers (La Poit’ à vélo)",
-          "value":"2"
+          "name": "Grenoble (S!cklo)",
+          "value": "2"
         },
         {
-          "name":"Lorient (Feel à Vélo)",
-          "value":"3"
+          "name": "Liège (RAYON9)",
+          "value": "3"
         },
         {
-          "name":"Montpellier (Les Coursiers Montpelliérains)",
-          "value":"4"
+          "name": "Lorient (Feel à Vélo)",
+          "value": "4"
         },
         {
-          "name":"Madrid (La Pajara)",
-          "value":"5"
+          "name": "Madrid (La Pajara)",
+          "value": "5"
         },
         {
-          "name":"Liège (RAYON9)",
-          "value":"6"
+          "name": "Montpellier (Les Coursiers Montpelliérains)",
+          "value": "6"
         },
         {
-          "name":"Grenoble (S!cklo)",
-          "value":"7"
+          "name": "Nantes (Les Coursiers Nantais)",
+          "value": "7"
         },
         {
-          "name":"York (York Collective)",
-          "value":"8"
+          "name": "Poitiers (La Poit’ à vélo)",
+          "value": "8"
         },
         {
-          "name":"Berlin (Kolyma2)",
-          "value":"9"
+          "name": "Warsaw (Zentrale)",
+          "value": "9"
         },
         {
-          "name":"Warsaw (Zentrale)",
-          "value":"10"
+          "name": "York (York Collective)",
+          "value": "10"
         }
       ]
     },

@@ -1,52 +1,52 @@
 {
-  "1":{
-    "name":"Les Coursiers Nantais",
-    "city":"Nantes",
-    "baseUrl":"https://lescoursiersnantais.coopcycle.org"
+  "1": {
+    "city": "Berlin",
+    "name": "Kolyma2",
+    "baseUrl": "https://kolyma2.coopcycle.org"
   },
-  "2":{
-    "name":"La Poit’ à vélo",
-    "city":"Poitiers",
-    "baseUrl":"https://lapoitavelo.coopcycle.org"
+  "2": {
+    "city": "Grenoble",
+    "name": "S!cklo",
+    "baseUrl": "https://sicklo.coopcycle.org"
   },
-  "3":{
-    "name":" (Feel à Vélo)",
-    "city":"Lorient",
-    "baseUrl":"https://feelavelo.coopcycle.org"
+  "3": {
+    "city": "Liège",
+    "name": "RAYON9",
+    "baseUrl": "https://rayon9.coopcycle.org"
   },
-  "4":{
-    "name":"Les Coursiers Montpelliérains",
-    "city":"Montpellier",
-    "baseUrl":"https://coursiersmontpellier.coopcycle.org"
+  "4": {
+    "city": "Lorient",
+    "name": "Feel à Vélo",
+    "baseUrl": "https://feelavelo.coopcycle.org"
   },
-  "5":{
-    "name":"La Pajara",
-    "city":"Madrid",
-    "baseUrl":"https://lapajara.coopcycle.org"
+  "5": {
+    "city": "Madrid",
+    "name": "La Pajara",
+    "baseUrl": "https://lapajara.coopcycle.org"
   },
-  "6":{
-    "name":"RAYON9",
-    "city":"Liège",
-    "baseUrl":"https://rayon9.coopcycle.org"
+  "6": {
+    "city": "Montpellier",
+    "name": "Les Coursiers Montpelliérains",
+    "baseUrl": "https://coursiersmontpellier.coopcycle.org"
   },
-  "7":{
-    "name":"S!cklo",
-    "city":"Grenoble",
-    "baseUrl":"https://sicklo.coopcycle.org"
+  "7": {
+    "city": "Nantes",
+    "name": "Les Coursiers Nantais",
+    "baseUrl": "https://lescoursiersnantais.coopcycle.org"
   },
-  "8":{
-    "name":"York Collective",
-    "city":"York",
-    "baseUrl":"https://york.coopcycle.org"
+  "8": {
+    "city": "Poitiers",
+    "name": "La Poit’ à vélo",
+    "baseUrl": "https://lapoitavelo.coopcycle.org"
   },
-  "9":{
-    "name":"Kolyma2",
-    "city":"Berlin",
-    "baseUrl":"https://kolyma2.coopcycle.org"
+  "9": {
+    "city": "Warsaw",
+    "name": "Zentrale",
+    "baseUrl": "https://zentrale.coopcycle.org"
   },
-  "10":{
-    "name":"Zentrale",
-    "city":"Warsaw",
-    "baseUrl":"https://zentrale.coopcycle.org"
+  "10": {
+    "city": "York",
+    "name": "York Collective",
+    "baseUrl": "https://york.coopcycle.org"
   }
 }

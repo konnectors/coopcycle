@@ -78,18 +78,17 @@ async function parseDocuments(fields, $) {
         sel: 'td:nth-of-type(7)',
         parse: normalizeDate
       },
-      ref: 'td:nth-of-type(1) a'
+      vendorRef: 'td:nth-of-type(1) a'
     },
     'tbody tr'
   )
   return docs.map(doc => ({
     ...doc,
-    vendorRef: `${fields.providerId}-${doc.ref}`,
     currency: 'EUR',
     filename: `${utils.formatDate(
       doc.date
     )}_${city}-${providerName}_${doc.amount.toFixed(2)}EUR${
-      doc.ref ? '_' + doc.ref : ''
+      doc.vendorRef ? '_' + doc.vendorRef : ''
     }.pdf`,
     vendor: VENDOR,
     metadata: {
