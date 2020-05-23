@@ -1,14 +1,14 @@
 {
   "version": "1.0.0",
-  "name": "Connector template",
+  "name": "Coopcycle",
   "type": "konnector",
   "language": "node",
   "icon": "icon.png",
-  "slug": "template",
-  "source": "git@github.com:konnectors/template.git",
-  "editor": "Cozy",
-  "vendor_link": "Link to the target website",
-  "categories": ["other"],
+  "slug": "coopcycle",
+  "source": "git@github.com:taratatach/cozy-konnector-coopcycle.git",
+  "editor": "Erwan Guyader",
+  "vendor_link": "https://coopcycle.org",
+  "categories": ["online_services"],
   "fields": {
     "login": {
       "type": "text"
@@ -24,6 +24,7 @@
     }
   },
   "data_types": [
+    "file",
     "bill"
   ],
   "screenshots": [],
@@ -43,8 +44,8 @@
     }
   },
   "developer": {
-    "name": "Cozy Cloud",
-    "url": "https://cozy.io"
+    "name": "Erwan Guyader",
+    "url": "https://github.com/taratatach"
   },
   "langs": ["fr", "en"],
   "locales": {
@@ -85,6 +86,6 @@
       }
     }
   },
-  "banksTransactionRegExp": "\\bbooks\\b",
+  "banksTransactionRegExp": "\\bcoopcycle\\b",
   "manifest_version": "2"
 }
