@@ -16,7 +16,7 @@ const request = requestFactory({
 })
 const providers = require('../providers.json')
 
-const VENDOR = 'coopcyle'
+const VENDOR = 'coopcycle'
 
 module.exports = new BaseKonnector(start)
 
@@ -35,18 +35,18 @@ async function start(fields) {
     // This is a bank identifier which will be used to link bills to bank operations. These
     // identifiers should be at least a word found in the title of a bank operation related to this
     // bill. It is not case sensitive.
-    identifiers: ['coopcyle']
+    identifiers: ['coopcycle']
   })
 }
 
 function authenticate(fields) {
-  const { username, password } = fields
+  const { login, password } = fields
   const { baseUrl } = getProvider(fields)
 
   return this.signin({
     url: `${baseUrl}/login`,
     formSelector: 'form',
-    formData: { _username: username, _password: password },
+    formData: { _username: login, _password: password },
     validate: (statusCode, $) => {
       if ($(`a[href='/logout']`).length === 1) {
         return true
