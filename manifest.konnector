@@ -1,0 +1,136 @@
+{
+  "version": "1.0.0",
+  "name": "Coopcycle",
+  "type": "konnector",
+  "language": "node",
+  "icon": "assets/icon.svg",
+  "slug": "coopcycle",
+  "source": "git@github.com:konnectors/coopcycle.git",
+  "editor": "Erwan Guyader",
+  "vendor_link": "https://coopcycle.org",
+  "categories": ["online_services"],
+  "fields": {
+    "login": {
+      "type": "text"
+    },
+    "password": {
+      "type": "password"
+    },
+    "providerId": {
+      "type": "dropdown",
+      "label": "providerName",
+      "options": [
+        {
+          "name": "Berlin (Kolyma2)",
+          "value": "1"
+        },
+        {
+          "name": "Grenoble (S!cklo)",
+          "value": "2"
+        },
+        {
+          "name": "Liège (RAYON9)",
+          "value": "3"
+        },
+        {
+          "name": "Lorient (Feel à Vélo)",
+          "value": "4"
+        },
+        {
+          "name": "Madrid (La Pajara)",
+          "value": "5"
+        },
+        {
+          "name": "Montpellier (Les Coursiers Montpelliérains)",
+          "value": "6"
+        },
+        {
+          "name": "Nantes (Les Coursiers Nantais)",
+          "value": "7"
+        },
+        {
+          "name": "Poitiers (La Poit’ à vélo)",
+          "value": "8"
+        },
+        {
+          "name": "Warsaw (Zentrale)",
+          "value": "9"
+        },
+        {
+          "name": "York (York Collective)",
+          "value": "10"
+        }
+      ]
+    },
+    "advancedFields": {
+      "folderPath": {
+        "advanced": true,
+        "isRequired": false
+      }
+    }
+  },
+  "data_types": [
+    "file",
+    "bill"
+  ],
+  "screenshots": [],
+  "permissions": {
+    "bank operations": {
+      "type": "io.cozy.bank.operations"
+    },
+    "bills": {
+      "type": "io.cozy.bills"
+    },
+    "files": {
+      "type": "io.cozy.files"
+    },
+    "accounts": {
+      "type": "io.cozy.accounts"
+    }
+  },
+  "developer": {
+    "name": "Erwan Guyader",
+    "url": "https://github.com/taratatach"
+  },
+  "langs": ["fr", "en"],
+  "locales": {
+    "fr": {
+      "short_description": "Récupère vos factures de livraison",
+      "long_description": "Récupère vos factures de livraison depuis n'importe quelle instance du réseau Coopcycle",
+      "permissions": {
+        "bank operations": {
+          "description": "Utilisé pour relier les factures à des operations bancaires"
+        },
+        "bills": {
+          "description": "Utilisé pour sauver les données des factures"
+        },
+        "files": {
+          "description": "Utilisé pour sauvegarder les factures"
+        },
+        "accounts": {
+          "description": "Utilisé pour obtenir les données du compte"
+        }
+      }
+    },
+    "en": {
+      "short_description": "Fetch your delivery bills",
+      "long_description": "Fetch your delivery bills from any instance of the Coopcycle network",
+      "permissions": {
+        "bank operations": {
+          "description": "Required to link bank operations to bills"
+        },
+        "bills": {
+          "description": "Required to save the bills data"
+        },
+        "files": {
+          "description": "Required to save the bills"
+        },
+        "accounts": {
+          "description": "Required to get the account's data"
+        }
+      }
+    }
+  },
+  "banksTransactionRegExp": "\\bcoopcycle\\b",
+  "manifest_version": "2"
+}
