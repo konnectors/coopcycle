@@ -3,7 +3,7 @@
   "name": "Coopcycle",
   "type": "konnector",
   "language": "node",
-  "icon": "assets/icon.svg",
+  "icon": "icon.svg",
   "slug": "coopcycle",
   "source": "git@github.com:konnectors/coopcycle.git",
   "editor": "Erwan Guyader",
