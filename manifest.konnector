@@ -5,7 +5,7 @@
   "language": "node",
   "icon": "assets/icon.svg",
   "slug": "coopcycle",
-  "source": "git@github.com:taratatach/cozy-konnector-coopcycle.git",
+  "source": "git@github.com:konnectors/coopcycle.git",
   "editor": "Erwan Guyader",
   "vendor_link": "https://coopcycle.org",
   "categories": ["online_services"],
@@ -85,8 +85,7 @@
       "type": "io.cozy.files"
     },
     "accounts": {
-      "type": "io.cozy.accounts",
-      "verbs": ["GET"]
+      "type": "io.cozy.accounts"
     }
   },
   "developer": {

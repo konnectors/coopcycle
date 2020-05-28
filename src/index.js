@@ -1,7 +1,10 @@
+process.env.SENTRY_DSN =
+  process.env.SENTRY_DSN ||
+  'https://caeb5af192034ec2a7e8cb085132512c@sentry.cozycloud.cc/136'
+
 const {
   BaseKonnector,
   requestFactory,
-  signin,
   scrape,
   log,
   utils
@@ -17,10 +20,9 @@ const VENDOR = 'coopcyle'
 
 module.exports = new BaseKonnector(start)
 
-async function start(fields, cozyParameters) {
+async function start(fields) {
   log('info', 'Authenticating ...')
-  if (cozyParameters) log('debug', 'Found COZY_PARAMETERS')
-  await authenticate(fields)
+  await authenticate.bind(this)(fields)
   log('info', 'Successfully logged in')
   log('info', 'Fetching the list of documents')
   const { baseUrl } = getProvider(fields)
@@ -41,7 +43,7 @@ function authenticate(fields) {
   const { username, password } = fields
   const { baseUrl } = getProvider(fields)
 
-  return signin({
+  return this.signin({
     url: `${baseUrl}/login`,
     formSelector: 'form',
     formData: { _username: username, _password: password },
@@ -92,8 +94,6 @@ async function parseDocuments(fields, $) {
     }.pdf`,
     vendor: VENDOR,
     metadata: {
-      importDate: new Date(),
-      version: 1,
       [VENDOR]: {
         provider: name,
         city,
