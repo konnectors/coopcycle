@@ -40,13 +40,13 @@ async function start(fields) {
 }
 
 function authenticate(fields) {
-  const { username, password } = fields
+  const { login, password } = fields
   const { baseUrl } = getProvider(fields)
 
   return this.signin({
     url: `${baseUrl}/login`,
     formSelector: 'form',
-    formData: { _username: username, _password: password },
+    formData: { _username: login, _password: password },
     validate: (statusCode, $) => {
       if ($(`a[href='/logout']`).length === 1) {
         return true
