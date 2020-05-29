@@ -100,6 +100,11 @@
   ],
   "locales": {
     "fr": {
+      "fields": {
+        "providerId": {
+          "label": "Fournisseur"
+        }
+      },
       "short_description": "Récupère vos factures de livraison",
       "long_description": "Récupère vos factures de livraison depuis n'importe quelle instance du réseau Coopcycle",
       "permissions": {
@@ -118,6 +123,11 @@
       }
     },
     "en": {
+      "fields": {
+        "providerId": {
+          "label": "Provider"
+        }
+      },
       "short_description": "Fetch your delivery bills",
       "long_description": "Fetch your delivery bills from any instance of the Coopcycle network",
       "permissions": {
