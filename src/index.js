@@ -67,17 +67,20 @@ async function parseDocuments(fields, $) {
   const docs = scrape(
     $,
     {
-      title: 'td:nth-of-type(4)',
+      title: 'td:nth-of-type(3)',
       amount: {
-        sel: 'td:nth-of-type(5) span',
+        sel: 'td:nth-of-type(4) span',
         parse: normalizePrice
       },
       fileurl: {
-        sel: 'td:nth-of-type(1) a',
-        parse: orderId => `${baseUrl}/profile/orders/${orderId}/receipt.pdf`
+        sel: 'td:nth-of-type(5) a',
+        attr: 'href',
+        parse: relativePath => {
+          return `${baseUrl}${relativePath}`
+        }
       },
       date: {
-        sel: 'td:nth-of-type(7)',
+        sel: 'td:nth-of-type(6)',
         parse: normalizeDate
       },
       vendorRef: 'td:nth-of-type(1) a'
@@ -131,7 +134,12 @@ async function generateMissingReceipts(fields, $) {
 }
 
 function normalizePrice(price) {
-  return parseFloat(price.replace('€', '').trim())
+  return parseFloat(
+    price
+      .replace('€', '')
+      .replace(',', '.')
+      .trim()
+  )
 }
 
 function normalizeDate(dateTime) {
