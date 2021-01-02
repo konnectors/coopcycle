@@ -36,7 +36,10 @@ async function start(fields) {
     // identifiers should be at least a word found in the title of a bank operation related to this
     // bill. It is not case sensitive.
     identifiers: ['coopcycle'],
-    fileIdAttributes: ['vendorRef']
+    fileIdAttributes: ['vendorRef'],
+    shouldUpdate: (document, existingDocument) => {
+      return document.amount !== existingDocument.amount
+    }
   })
 }
 
