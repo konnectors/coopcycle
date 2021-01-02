@@ -36,7 +36,10 @@ async function start(fields) {
     // identifiers should be at least a word found in the title of a bank operation related to this
     // bill. It is not case sensitive.
     identifiers: ['coopcycle'],
-    fileIdAttributes: ['vendorRef']
+    fileIdAttributes: ['vendorRef'],
+    shouldUpdate: (document, existingDocument) => {
+      return document.amount !== existingDocument.amount
+    }
   })
 }
 
@@ -61,7 +64,6 @@ function authenticate(fields) {
 
 async function parseDocuments(fields, $) {
   const { baseUrl, city, name } = getProvider(fields)
-  const providerName = cleanProviderName(name)
 
   await generateMissingReceipts(fields, $)
 
@@ -93,11 +95,8 @@ async function parseDocuments(fields, $) {
     .map(doc => ({
       ...doc,
       currency: 'EUR',
-      filename: `${utils.formatDate(
-        doc.date
-      )}_${city}-${providerName}_${doc.amount.toFixed(2)}EUR${
-        doc.vendorRef ? '_' + doc.vendorRef : ''
-      }.pdf`,
+      filename: generateFilename(fields, doc),
+      shouldReplaceName: generateInvalidFilename(fields, doc),
       vendor: VENDOR,
       metadata: {
         [VENDOR]: {
@@ -164,4 +163,31 @@ function getProvider(fields) {
 
 function cleanProviderName(name) {
   return name.replace(/'/g, '').replace(/ /g, '_')
+}
+
+function generateFilename(fields, doc) {
+  const { city, name } = getProvider(fields)
+  const providerName = cleanProviderName(name)
+
+  return `${utils.formatDate(
+    doc.date
+  )}_${city}-${providerName}_${doc.amount.toFixed(2)}EUR${
+    doc.vendorRef ? '_' + doc.vendorRef : ''
+  }.pdf`
+}
+
+/* Migration function for invoices downloaded before commit
+ * `9ccb456f556c9b7fc8a94da0e0047ad96f2d6fc6`, when parsed amounts were missing
+ * cents because Coopcycle could display amounts in French number format with
+ * commas instead of dots as separator.
+ */
+function generateInvalidFilename(fields, doc) {
+  const validFilename = generateFilename(fields, doc)
+  const validAmount = doc.amount.toFixed(2)
+
+  const invalidAmount = validAmount.replace(/\.\d{2}/, '.00')
+  const invalidFilename = validFilename.replace(validAmount, invalidAmount)
+  log('debug', { validFilename, invalidFilename })
+
+  return invalidFilename
 }
