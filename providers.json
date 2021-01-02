@@ -1,52 +1,164 @@
 {
   "1": {
+    "label": "Berlin (Kolyma2)",
     "city": "Berlin",
     "name": "Kolyma2",
     "baseUrl": "https://kolyma2.coopcycle.org"
   },
   "2": {
+    "label": "Grenoble (S!cklo)",
     "city": "Grenoble",
     "name": "S!cklo",
     "baseUrl": "https://sicklo.coopcycle.org"
   },
   "3": {
+    "label": "Liège (RAYON9)",
     "city": "Liège",
     "name": "RAYON9",
     "baseUrl": "https://rayon9.coopcycle.org"
   },
   "4": {
+    "label": "Lorient (Feel à Vélo)",
     "city": "Lorient",
     "name": "Feel à Vélo",
     "baseUrl": "https://feelavelo.coopcycle.org"
   },
   "5": {
+    "label": "Madrid (La Pajara)",
     "city": "Madrid",
     "name": "La Pajara",
     "baseUrl": "https://lapajara.coopcycle.org"
   },
   "6": {
+    "label": "Montpellier (Les Coursiers Montpelliérains)",
     "city": "Montpellier",
     "name": "Les Coursiers Montpelliérains",
     "baseUrl": "https://coursiersmontpellier.coopcycle.org"
   },
   "7": {
-    "city": "Nantes",
+    "label": "Nantes - Les Coursiers Nantais (Les Coursiers Nantais)",
+    "city": "Nantes - Les Coursiers Nantais",
     "name": "Les Coursiers Nantais",
     "baseUrl": "https://lescoursiersnantais.coopcycle.org"
   },
   "8": {
+    "label": "Poitiers (La Poit’ à vélo)",
     "city": "Poitiers",
     "name": "La Poit’ à vélo",
     "baseUrl": "https://lapoitavelo.coopcycle.org"
   },
   "9": {
+    "label": "Warsaw (Zentrale)",
     "city": "Warsaw",
     "name": "Zentrale",
     "baseUrl": "https://zentrale.coopcycle.org"
   },
   "10": {
+    "label": "York (York Collective)",
     "city": "York",
     "name": "York Collective",
     "baseUrl": "https://york.coopcycle.org"
+  },
+  "11": {
+    "label": "Amiens (Beefast)",
+    "city": "Amiens",
+    "name": "Beefast",
+    "baseUrl": "https://beefast.coopcycle.org"
+  },
+  "12": {
+    "label": "Barcelona (Mensakas)",
+    "city": "Barcelona",
+    "name": "Mensakas",
+    "baseUrl": "https://mensakas.coopcycle.org"
+  },
+  "13": {
+    "label": "Bilbao (Botxoriders)",
+    "city": "Bilbao",
+    "name": "Botxoriders",
+    "baseUrl": "https://botxoriders.coopcycle.org"
+  },
+  "14": {
+    "label": "Birmingham (Cooperation Birmingham)",
+    "city": "Birmingham",
+    "name": "Cooperation Birmingham",
+    "baseUrl": "https://birmingham.coopcycle.org"
+  },
+  "15": {
+    "label": "Bordeaux (Les Coursiers Bordelais)",
+    "city": "Bordeaux",
+    "name": "Les Coursiers Bordelais",
+    "baseUrl": "https://coursiersbordelais.coopcycle.org"
+  },
+  "16": {
+    "label": "Clermont-Ferrand (CYCLOME)",
+    "city": "Clermont-Ferrand",
+    "name": "CYCLOME",
+    "baseUrl": "https://cyclome.coopcycle.org"
+  },
+  "17": {
+    "label": "Dijon (A2ROO)",
+    "city": "Dijon",
+    "name": "A2ROO",
+    "baseUrl": "https://a2roo.coopcycle.org"
+  },
+  "18": {
+    "label": "Guingamp (Breizh Vélo)",
+    "city": "Guingamp",
+    "name": "Breizh Vélo",
+    "baseUrl": "https://breizhvelo.coopcycle.org"
+  },
+  "19": {
+    "label": "Lille / Roubaix (Lille.bike)",
+    "city": "Lille / Roubaix",
+    "name": "Lille.bike",
+    "baseUrl": "https://lille.coopcycle.org"
+  },
+  "20": {
+    "label": "Malmö (Alternativa Kurieren)",
+    "city": "Malmö",
+    "name": "Alternativa Kurieren",
+    "baseUrl": "https://alternativakuriren.coopcycle.org"
+  },
+  "21": {
+    "label": "Manchester (Chorlton Bike Deliveries)",
+    "city": "Manchester",
+    "name": "Chorlton Bike Deliveries",
+    "baseUrl": "https://chorlton-bike-deliveries.coopcycle.org"
+  },
+  "22": {
+    "label": "Nantes - Naofood (Naofood)",
+    "city": "Nantes - Naofood",
+    "name": "Naofood",
+    "baseUrl": "https://naofood.coopcycle.org"
+  },
+  "23": {
+    "label": "Paris (Resto.Paris)",
+    "city": "Paris",
+    "name": "Resto.Paris",
+    "baseUrl": "https://resto.paris"
+  },
+  "24": {
+    "label": "Rodez (Biclooo)",
+    "city": "Rodez",
+    "name": "Biclooo",
+    "baseUrl": "https://biclooo.coopcycle.org"
+  },
+  "25": {
+    "label": "Strasbourg (Kooglof)",
+    "city": "Strasbourg",
+    "name": "Kooglof",
+    "baseUrl": "https://kooglof.coopcycle.org"
+  },
+  "26": {
+    "label": "Vitoria-Gasteiz (Eraman Repartos Gasteiz)",
+    "city": "Vitoria-Gasteiz",
+    "name": "Eraman Repartos Gasteiz",
+    "baseUrl": "https://eramangasteiz.coopcycle.org"
+  },
+  "27": {
+    "label": "Zaragoza (Zampate)",
+    "city": "Zaragoza",
+    "name": "Zampate",
+    "baseUrl": "https://zampate.coopcycle.org"
   }
 }

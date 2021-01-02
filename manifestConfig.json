@@ -1,15 +1,51 @@
 [
   {
+    "name": "Amiens (Beefast)",
+    "value": "11"
+  },
+  {
+    "name": "Barcelona (Mensakas)",
+    "value": "12"
+  },
+  {
     "name": "Berlin (Kolyma2)",
     "value": "1"
+  },
+  {
+    "name": "Bilbao (Botxoriders)",
+    "value": "13"
+  },
+  {
+    "name": "Birmingham (Cooperation Birmingham)",
+    "value": "14"
+  },
+  {
+    "name": "Bordeaux (Les Coursiers Bordelais)",
+    "value": "15"
+  },
+  {
+    "name": "Clermont-Ferrand (CYCLOME)",
+    "value": "16"
+  },
+  {
+    "name": "Dijon (A2ROO)",
+    "value": "17"
   },
   {
     "name": "Grenoble (S!cklo)",
     "value": "2"
   },
   {
+    "name": "Guingamp (Breizh Vélo)",
+    "value": "18"
+  },
+  {
     "name": "Liège (RAYON9)",
     "value": "3"
+  },
+  {
+    "name": "Lille / Roubaix (Lille.bike)",
+    "value": "19"
   },
   {
     "name": "Lorient (Feel à Vélo)",
@@ -20,16 +56,44 @@
     "value": "5"
   },
   {
+    "name": "Malmö (Alternativa Kurieren)",
+    "value": "20"
+  },
+  {
+    "name": "Manchester (Chorlton Bike Deliveries)",
+    "value": "21"
+  },
+  {
     "name": "Montpellier (Les Coursiers Montpelliérains)",
     "value": "6"
   },
   {
-    "name": "Nantes (Les Coursiers Nantais)",
+    "name": "Nantes - Les Coursiers Nantais (Les Coursiers Nantais)",
     "value": "7"
+  },
+  {
+    "name": "Nantes - Naofood (Naofood)",
+    "value": "22"
+  },
+  {
+    "name": "Paris (Resto.Paris)",
+    "value": "23"
   },
   {
     "name": "Poitiers (La Poit’ à vélo)",
     "value": "8"
+  },
+  {
+    "name": "Rodez (Biclooo)",
+    "value": "24"
+  },
+  {
+    "name": "Strasbourg (Kooglof)",
+    "value": "25"
+  },
+  {
+    "name": "Vitoria-Gasteiz (Eraman Repartos Gasteiz)",
+    "value": "26"
   },
   {
     "name": "Warsaw (Zentrale)",
@@ -38,5 +102,9 @@
   {
     "name": "York (York Collective)",
     "value": "10"
+  },
+  {
+    "name": "Zaragoza (Zampate)",
+    "value": "27"
   }
 ]
