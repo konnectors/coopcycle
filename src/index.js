@@ -146,12 +146,14 @@ function normalizePrice(price) {
 }
 
 function normalizeDate(dateTime) {
-  const formattedDate = dateTime.replace(
-    /(\d{2})\/(\d{2})\/(\d{4}) (\d{2}):(\d{2})/,
-    (_, d, M, Y, h, m) => {
-      return `${Y}-${M}-${d}T${h}:${m}:00`
-    }
-  )
+  const formattedDate = dateTime
+    .replace(
+      /(\d{2})\/(\d{2})\/(\d{4}) (\d{2}):(\d{2})/,
+      (_, d, M, Y, h, m) => {
+        return `${Y}-${M}-${d}T${h}:${m}:00`
+      }
+    )
+    .slice(0, 19) // Use the lower boundary of the delivery time interval as billing date and time
   log('debug', { formattedDate })
   return new Date(formattedDate)
 }
