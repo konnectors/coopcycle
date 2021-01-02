@@ -5,11 +5,38 @@ const cheerio = require('cheerio')
 const fs = require('fs')
 const path = require('path')
 
-console.log(
-  'Getting the list of providers and the corresponding urls and names'
-)
+const providersFilePath = path.join(__dirname, '../providers.json')
+const manifestFilePath = path.join(__dirname, '../manifestConfig.json')
 
-request('https://coopcycle.org/fr/').then(body => {
+run()
+
+async function run() {
+  const currentProviders = loadCurrentProviders()
+  const providers = await fetchProviders()
+
+  const byIndex = buildProvidersList(currentProviders, providers)
+  fs.writeFileSync(providersFilePath, JSON.stringify(byIndex, null, 2))
+  console.log(`The list of providers is written in ${providersFilePath}`)
+
+  const manifestConfig = buildManifestConfig(byIndex)
+  fs.writeFileSync(manifestFilePath, JSON.stringify(manifestConfig, null, 2))
+  console.log(`The manifest configuration is written in ${manifestFilePath}`)
+}
+
+function loadCurrentProviders() {
+  console.log('Loading the current list of providers')
+
+  return fs.existsSync(providersFilePath)
+    ? JSON.parse(fs.readFileSync(providersFilePath))
+    : {}
+}
+
+async function fetchProviders() {
+  console.log(
+    'Fetching the updated list of providers and the corresponding urls and names'
+  )
+
+  const body = await request('https://coopcycle.org/fr/')
   const $ = cheerio.load(body)
   const cityDropdown = $('#city-dropdown')
 
@@ -17,7 +44,7 @@ request('https://coopcycle.org/fr/').then(body => {
     throw new Error('Failed to get the list of available providers')
   }
 
-  const providers = cityDropdown
+  return cityDropdown
     .find('option')
     .map(function() {
       const baseUrl = $(this).attr('value')
@@ -28,38 +55,55 @@ request('https://coopcycle.org/fr/').then(body => {
       }
     })
     .get()
-  providers.sort((a, b) => a.label.localeCompare(b.label))
+}
 
+// Helpers
+
+function existingProviderIndex(list, provider) {
+  const entries = Object.entries(list)
+  const existing = entries.find(entry => {
+    // eslint-disable-next-line no-unused-vars
+    const [strIndex, { baseUrl }] = entry
+    return baseUrl === provider.baseUrl
+  })
+  return existing && existing[0]
+}
+
+function getProviderDetails(label) {
   const re = /^([^(]+) \(([^)]+)/
-  const manifestConfig = []
-  const byIndex = {}
-  let index = 1
-  for (const { baseUrl, label } of providers) {
-    const match = re.exec(label)
-    if (!match) {
-      throw new Error(`Failed to match provider details: ${label}`)
-    }
-
-    const city = match[1]
-    const name = match[2]
-    const strIndex = index.toString()
-
-    byIndex[strIndex] = { city, name, baseUrl }
-    manifestConfig.push({
-      name: label,
-      value: strIndex
-    })
-    index++
+  const match = re.exec(label)
+  if (!match) {
+    throw new Error(`Failed to match provider details: ${label}`)
   }
 
-  const providersFilePath = path.join(__dirname, '../providers.json')
-  fs.writeFileSync(providersFilePath, JSON.stringify(byIndex, null, 2))
+  return {
+    city: match[1],
+    name: match[2]
+  }
+}
 
-  console.log(`The list of providers is written in ${providersFilePath}`)
+function buildProvidersList(currentProviders, providers) {
+  const byIndex = {}
 
-  manifestConfig.sort((a, b) => a.name.localeCompare(b.name))
-  const manifestFilePath = path.join(__dirname, '../manifestConfig.json')
-  fs.writeFileSync(manifestFilePath, JSON.stringify(manifestConfig, null, 2))
+  let index = Object.keys(currentProviders).length + 1 // We use a 1 based index
+  for (const { baseUrl, label } of providers) {
+    const { city, name } = getProviderDetails(label)
 
-  console.log(`The manifest configuration is written in ${manifestFilePath}`)
-})
+    const strIndex =
+      existingProviderIndex(currentProviders, {
+        baseUrl
+      }) || (index++).toString()
+    byIndex[strIndex] = { label, city, name, baseUrl }
+  }
+
+  return byIndex
+}
+
+function buildManifestConfig(providersList) {
+  return Object.entries(providersList)
+    .map(([strIndex, { label }]) => ({
+      name: label,
+      value: strIndex
+    }))
+    .sort((a, b) => a.name.localeCompare(b.name))
+}
