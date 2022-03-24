@@ -48,5 +48,10 @@
     "city": "York",
     "name": "York Collective",
     "baseUrl": "https://york.coopcycle.org"
+  },
+  "11": {
+    "city": "Nantes",
+    "name": "Naofood",
+    "baseUrl": "https://naofood.coopcycle.org"
   }
 }
