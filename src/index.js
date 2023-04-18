@@ -77,7 +77,7 @@ async function parseDocuments(fields, $) {
         sel: 'td:nth-of-type(5) a',
         attr: 'href',
         parse: relativePath => {
-          return `${baseUrl}${relativePath}`
+          return relativePath ? `${baseUrl}${relativePath}` : undefined
         }
       },
       date: {
@@ -88,23 +88,25 @@ async function parseDocuments(fields, $) {
     },
     'tbody tr'
   )
-  return docs.map(doc => ({
-    ...doc,
-    currency: 'EUR',
-    filename: `${utils.formatDate(
-      doc.date
-    )}_${city}-${providerName}_${doc.amount.toFixed(2)}EUR${
-      doc.vendorRef ? '_' + doc.vendorRef : ''
-    }.pdf`,
-    vendor: VENDOR,
-    metadata: {
-      [VENDOR]: {
-        provider: name,
-        city,
-        summary: doc.title
+  return docs
+    .filter(({ fileurl }) => !!fileurl)
+    .map(doc => ({
+      ...doc,
+      currency: 'EUR',
+      filename: `${utils.formatDate(
+        doc.date
+      )}_${city}-${providerName}_${doc.amount.toFixed(2)}EUR${
+        doc.vendorRef ? '_' + doc.vendorRef : ''
+      }.pdf`,
+      vendor: VENDOR,
+      metadata: {
+        [VENDOR]: {
+          provider: name,
+          city,
+          summary: doc.title
+        }
       }
-    }
-  }))
+    }))
 }
 
 async function generateMissingReceipts(fields, $) {
