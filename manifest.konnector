@@ -61,7 +61,12 @@
         {
           "name": "York (York Collective)",
           "value": "10"
+        },
+        {
+          "name": "Nantes (Naofood)",
+          "value": "11"
         }
+        
       ]
     },
     "advancedFields": {
